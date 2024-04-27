@@ -1,9 +1,10 @@
 ﻿namespace Task1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            //Lab1 
             Console.WriteLine("Hello, World!");
         }
     }
