@@ -1,0 +1,73 @@
+﻿<Window x:Class="Lab4.Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab4.Task1" 
+        xmlns:local1="clr-namespace:Lab4.Task1.Service"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid DataContext="{Binding ElementName=list, Path=SelectedItem}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ToolBar Grid.Column="1" Grid.Row="0">
+            <Button Content="Update" Width="100" Margin="5" Click="UpdateButton_Click"/>
+            <Button Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+            <Button Content="Read" Width="100" Margin="5" Click="ReadButton_Click"/>
+            <Button Content="Save"  Width="100" Margin="5" Click="SaveButton_Click" Visibility="Hidden" Name="SaveButton"/>
+        </ToolBar>
+
+        <ListBox Grid.Row="1" 
+         Grid.Column="0" 
+         Grid.ColumnSpan="2" 
+         Margin="0,0,0,3"
+         ScrollViewer.VerticalScrollBarVisibility="Auto"
+         Name="list"
+         ItemsSource="{Binding}"
+         DisplayMemberPath="Title" />
+
+
+        <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Name="IDTextBox" Visibility="Hidden"
+            Text="{Binding Path=ID}"/>
+
+        <TextBlock Grid.Row="2" Margin="5">ISBN:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="ISBNTextBox"
+        Text="{Binding Path=ISBN}"/>
+
+        <TextBlock Grid.Row="3" Margin="5">Title :</TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="TitleTextBox"
+        Text="{Binding Path=Title}"
+        Focusable="True"/>
+
+        <TextBlock Grid.Row="4" Margin="5">Authors :</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="AuthorsTextBox"
+        Text="{Binding Path=Authors}"
+        Focusable="True" />
+
+        <TextBlock Grid.Row="5" Margin="5">Publisher :</TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="PublisherTextBox"
+        Text="{Binding Path=Publisher}"
+        Focusable="True" />
+
+        <TextBlock Grid.Row="6" Margin="5">PublicationYear:</TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="1" Name="PublicationYearTextBox" 
+        Text="{Binding Path=PublicationYear}"
+        Focusable="True">
+        </TextBox>
+    </Grid>
+</Window>
