@@ -2,9 +2,17 @@
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            //Lab1 
+            var hClass = new HelloWorld();
+
+            hClass.Print();
+        }
+    }
+    public class HelloWorld
+    {
+        public void Print()
+        {
             Console.WriteLine("Hello, World!");
         }
     }
