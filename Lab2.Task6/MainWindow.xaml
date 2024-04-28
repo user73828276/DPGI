@@ -9,7 +9,7 @@
     <Window.Resources>
         <LinearGradientBrush x:Key="LinearPanelBrush">
             <GradientStop Color="Green" Offset="0.5" />
-            <GradientStop Color="Red" Offset="0" />
+            <GradientStop Color="blue" Offset="0" />
         </LinearGradientBrush>
         <Style TargetType="Button">
             <Setter Property="Padding" Value="5" />
