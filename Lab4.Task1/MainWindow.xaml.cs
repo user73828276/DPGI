@@ -47,16 +47,15 @@ namespace Lab4.Task1
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(IDTextBox.Text, out int id) && Int32.TryParse(PublicationYearTextBox.Text, out int publicationYear))
+            if (Int32.TryParse(PublicationYearTextBox.Text, out int publicationYear))
             {
                 Book newbook = new()
                 {
-                    ID = id,
                     ISBN = ISBNTextBox.Text,
                     Title = TitleTextBox.Text,
                     Authors = AuthorsTextBox.Text,
                     Publisher = PublisherTextBox.Text,
-                    PublicationYear = Convert.ToInt32(PublicationYearTextBox.Text)
+                    PublicationYear = publicationYear
                 };
                 ResetFields();
                 _bookRepository.CreateBook(newbook);

@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab4.Task1" 
-        xmlns:local1="clr-namespace:Lab4.Task1.Service"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid DataContext="{Binding ElementName=list, Path=SelectedItem}">
@@ -29,7 +28,7 @@
             <Button Content="Update" Width="100" Margin="5" Click="UpdateButton_Click"/>
             <Button Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
             <Button Content="Read" Width="100" Margin="5" Click="ReadButton_Click"/>
-            <Button Content="Save"  Width="100" Margin="5" Click="SaveButton_Click" Visibility="Hidden" Name="SaveButton"/>
+            <Button Content="Save" Width="100" Margin="5" Click="SaveButton_Click" Name="SaveButton"/>
         </ToolBar>
 
         <ListBox Grid.Row="1" 
